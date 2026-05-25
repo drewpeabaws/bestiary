@@ -70,3 +70,11 @@ data/local/
 
 # uv lockfile is checked in (deterministic builds); requirements.txt is generated, not source
 # Keep: uv.lock, pyproject.toml; Discard: requirements*.txt unless explicitly committed
+
+# Frontend (Next.js)
+web/node_modules/
+web/.next/
+web/.env.local
+web/tsconfig.tsbuildinfo
+# Un-ignore web/lib/ — the root `lib/` pattern (Python template) is too broad
+!web/lib/

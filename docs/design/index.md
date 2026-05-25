@@ -34,3 +34,15 @@ This design system is consumed by:
 - **/design-review v0.2** — pixel-parity gate
 
 Updated by `/design-system` (v1.0 LOCKED) on 2026-05-24.
+
+## Wireframes
+
+| Epic | Linear | FigJam IA | Figma screens | Status |
+|---|---|---|---|---|
+| [BUR-7 E2 Frontend foundation](https://linear.app/boophealth/issue/BUR-7) | [Linear](https://linear.app/boophealth/issue/BUR-7) | [FigJam](https://www.figma.com/board/TUAWtt0RynApTwBf62Uwa6) | [Figma](https://www.figma.com/design/sjbZrDGptofeurxHYiABHT) | draft (Dick to ratify) |
+
+## Mockups
+
+| Epic | Linear doc | Figma mockup | Approval status | Notes |
+|---|---|---|---|---|
+| [BUR-7 E2 Frontend foundation](https://linear.app/boophealth/issue/BUR-7) | "Mockup — epic BUR-7" (PRD project) | [Figma](https://www.figma.com/design/mCZeqaqNTsprUA2U1uaAEq) | approved 2026-05-25 (proxy as Pete + Skylar) | Dark/Dense + Dark/Spacious pages; light-mode v0.1.x backlog |

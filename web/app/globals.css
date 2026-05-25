@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Design token CSS vars (from docs/design/tokens.json) ─────────────────── */
+
+:root {
+  /* Brand */
+  --color-brand-primary: #0F172A;
+  --color-brand-secondary: #06B6D4;
+
+  /* Semantic */
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-error: #DC2626;
+  --color-info: #2563EB;
+
+  /* Surfaces — light mode */
+  --color-bg-page: #F9FAFB;
+  --color-bg-surface: #FFFFFF;
+  --color-bg-elevated: #FFFFFF;
+  --color-bg-overlay: rgba(0, 0, 0, 0.5);
+
+  /* Text — light mode */
+  --color-text-primary: #0F172A;
+  --color-text-secondary: #4B5563;
+  --color-text-tertiary: #6B7280;
+
+  /* Border — light mode */
+  --color-border-default: #E5E7EB;
+  --color-border-strong: #D1D5DB;
+
+  /* Space — dense defaults (Skylar; overridden by .density-spacious) */
+  --space-card-padding: 12px;
+  --space-form-gap: 8px;
+  --space-section-margin: 16px;
+  --space-page-padding: 16px;
+  --space-button-padding-y: 6px;
+  --space-button-padding-x: 12px;
+
+  /* Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-button: 8px;
+  --radius-card: 8px;
+  --radius-input: 4px;
+  --radius-modal: 12px;
+
+  /* Motion */
+  --motion-fast: 150ms;
+  --motion-normal: 200ms;
+  --motion-slow: 400ms;
+}
+
+.dark {
+  /* Surfaces — dark mode */
+  --color-bg-page: #0F172A;
+  --color-bg-surface: #1E293B;
+  --color-bg-elevated: #374151;
+  --color-bg-overlay: rgba(0, 0, 0, 0.7);
+
+  /* Text — dark mode */
+  --color-text-primary: #F9FAFB;
+  --color-text-secondary: #9CA3AF;
+  --color-text-tertiary: #6B7280;
+
+  /* Border — dark mode */
+  --color-border-default: #374151;
+  --color-border-strong: #4B5563;
+}
+
+/* Spacious density mode (Pete; toggle or mobile detection) */
+.density-spacious {
+  --space-card-padding: 24px;
+  --space-form-gap: 16px;
+  --space-section-margin: 32px;
+  --space-page-padding: 32px;
+  --space-button-padding-y: 12px;
+  --space-button-padding-x: 20px;
+}
+
+/* ─── Base styles ───────────────────────────────────────────────────────────── */
+
+@layer base {
+  html {
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-bg-page text-content-primary;
+    min-height: 100vh;
+  }
+
+  *:focus-visible {
+    outline: 2px solid var(--color-brand-secondary);
+    outline-offset: 2px;
+  }
+}
+
+/* ─── Utility classes ──────────────────────────────────────────────────────── */
+
+@layer utilities {
+  .btn-primary {
+    @apply bg-brand-secondary text-white font-medium rounded-button;
+    padding: var(--space-button-padding-y) var(--space-button-padding-x);
+    transition: opacity var(--motion-fast) ease-out;
+  }
+  .btn-primary:hover {
+    @apply opacity-90;
+  }
+  .btn-primary:disabled {
+    @apply opacity-50 cursor-not-allowed;
+  }
+
+  .btn-ghost {
+    @apply text-content-secondary font-medium rounded-button border border-border;
+    padding: var(--space-button-padding-y) var(--space-button-padding-x);
+    transition: background-color var(--motion-fast) ease-out;
+  }
+  .btn-ghost:hover {
+    @apply bg-bg-elevated;
+  }
+
+  .card {
+    @apply bg-bg-surface border border-border rounded-card;
+    padding: var(--space-card-padding);
+  }
+
+  .input-field {
+    @apply w-full bg-bg-surface border border-border rounded-input text-content-primary text-sm;
+    padding: 8px 12px;
+    transition: border-color var(--motion-fast) ease-out;
+  }
+  .input-field:focus {
+    @apply outline-none border-brand-secondary;
+  }
+  .input-field::placeholder {
+    @apply text-content-tertiary;
+  }
+}
